@@ -236,3 +236,4 @@ def assemble_theta_table(
     rest = df_rest.join(theta_rest)
     table = pd.concat([docs, rest], ignore_index=True)
     return table[table["comment"].notna()]
+
