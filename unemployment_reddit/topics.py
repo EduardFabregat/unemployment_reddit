@@ -1,5 +1,5 @@
 """Steps 2-3 (unemployment_1, assign_docs_to_topics): BERTopic on a sample, then the full corpus.
-
+For Reddit's comments about unemployment. 
 The heavy libraries (bertopic, umap, hdbscan, gensim, sentence-transformers) are imported inside
 the functions that need them so ``import unemployment_reddit`` stays cheap.
 """
