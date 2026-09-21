@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unemployment_reddit"
+version = "0.1.0"
+description = "Topic frames, emotions and Content Engagement Capacity on Reddit unemployment discourse"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "scikit-learn",
+    "tqdm",
+    "zstandard",
+]
+
+[project.optional-dependencies]
+topics = ["bertopic", "sentence-transformers", "umap-learn", "hdbscan", "gensim"]
+emotions = ["transformers", "torch"]
+analysis = ["xgboost", "shap", "statsmodels"]
+plots = ["matplotlib", "seaborn", "adjustText"]
+dev = ["pytest", "networkx"]
+all = [
+    "unemployment_reddit[topics,emotions,analysis,plots]",
+]
+
+[project.scripts]
+unemployment-reddit = "unemployment_reddit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["unemployment_reddit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

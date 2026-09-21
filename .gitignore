@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+.ipynb_checkpoints/
+
+# Data and model artifacts are large and not part of the code
+data/
+*.db
+*.parquet
+*.npy
+*.zst
+*.csv
+unemployment_bertopic_model_*/
